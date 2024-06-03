@@ -1,5 +1,5 @@
 import {Link, NavLink} from "react-router-dom";
-import logo from "../../assets/logo-rem.png";
+import logo from "../../assets/last.png";
 
 const Navbar = () => {
   return (
@@ -7,22 +7,11 @@ const Navbar = () => {
       {/* Mobile Navbar */}
       <div className="ml-4 md:hidden"></div>
       {/* laptop view */}
-      <div className="hidden md:block">
-        {/* <nav className="flex bg-red-300 items-center px-6 py-2 ">
-          <div className="w-16 ">
-            <img src={logo} alt="" />
-          </div>
-          <ul className="flex justify-between ">
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-          </ul>
-        </nav> */}
-
-        <nav className=" hidden  justify-between items-center w-full h-16 bg-black text-white relative p-2 mr-auto md:flex  ">
+      <div className="hidden md:block fixed top-0 w-full">
+        <nav className=" hidden  justify-between items-center w-full h-16 relative p-2 mr-auto md:flex md:px-10 ">
           <div className="img w-12 h-8 flex items-center justify-center">
-            <Link to="/" className="absolute">
-              <img src={logo} alt="" className="ml-8" />
+            <Link to="/" className="absolute w-16 logo-div ">
+              <img src={logo} alt="" className="ml-8 img-logo " />
             </Link>
           </div>
           <ul
@@ -33,51 +22,38 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({isActive}) =>
-                  isActive ? "bg-green-400 p-1 rounded" : "text-gray-500 "
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/about"
-                className={({isActive}) =>
-                  isActive ? "bg-green-400 p-1 rounded" : "text-gray-500 "
+                  isActive
+                    ? "bg-baseColor-50 p-1 rounded text-white"
+                    : "text-gray-500 "
                 }
               >
                 About
               </NavLink>
             </li>
+
             <li>
               <NavLink
-                to="/Contact-us"
+                to="/projects"
                 className={({isActive}) =>
-                  isActive ? "bg-green-400 p-1 rounded" : "text-gray-500 "
+                  isActive
+                    ? "bg-baseColor-50 p-1 rounded text-white"
+                    : "text-gray-500 "
                 }
               >
-                Contact Us
+                Projects
               </NavLink>
             </li>
+
             <li>
               <NavLink
-                to="/signup"
+                to="/contact"
                 className={({isActive}) =>
-                  isActive ? "bg-green-400 p-1 rounded" : "text-gray-500 "
+                  isActive
+                    ? "bg-baseColor-50 p-1 rounded text-white"
+                    : "text-gray-500 "
                 }
               >
-                Signup
-              </NavLink>
-            </li>
-            <li className="flex ">
-              <NavLink
-                to="/Login"
-                className={({isActive}) =>
-                  isActive ? "bg-green-400 p-1 rounded" : "text-gray-500 "
-                }
-              >
-                Login
+                Contact
               </NavLink>
             </li>
           </ul>

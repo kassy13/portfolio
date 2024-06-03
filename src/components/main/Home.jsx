@@ -1,9 +1,15 @@
+import Hero from "./Hero";
 import Navbar from "./Navbar";
+import Projects from "./Projects";
 
 const Home = () => {
   return (
     <>
-      <Navbar />
+      <section>
+        <Navbar />
+        <Hero />
+        <Projects />
+      </section>
     </>
   );
 };
